@@ -27,3 +27,11 @@ LeetCode's **SQL 50 Study Plan** is designed to cover fundamental to advanced SQ
 - 📈 Share learnings and insights
 
 Stay tuned for more updates! 🚀
+
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## Database
+|  |
+| ------- |
+| [1908-recyclable-and-low-fat-products](https://github.com/AyeshaAndleeb/50-SQL-Questions-/tree/master/1908-recyclable-and-low-fat-products) |
+<!---LeetCode Topics End-->
