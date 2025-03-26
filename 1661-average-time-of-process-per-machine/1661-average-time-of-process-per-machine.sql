@@ -1,16 +1,8 @@
-# Write your MySQL query statement below
-WITH ProcessTime AS (
-    SELECT 
-        machine_id, 
-        process_id, 
-        MAX(CASE WHEN activity_type = 'end' THEN timestamp END) - 
-        MAX(CASE WHEN activity_type = 'start' THEN timestamp END) AS time_taken
-    FROM Activity
-    GROUP BY machine_id, process_id
-)
-
-SELECT 
-    machine_id, 
-    ROUND(AVG(time_taken), 3) AS processing_time
-FROM ProcessTime
-GROUP BY machine_id;
+select a1.machine_id, round(avg(a2.timestamp - a1.timestamp), 3)
+as processing_time
+from Activity a1
+inner join Activity a2
+on a1.process_id = a2.process_id
+and a1.machine_id = a2.machine_id
+and a1.timestamp < a2.timestamp
+group by a1.machine_id
